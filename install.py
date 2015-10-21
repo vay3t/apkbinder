@@ -1,8 +1,6 @@
 #!/usr/bin/python
-
 import os
 
-pwd=os.getcwd()
 print "Press 'enter' to install requirements "
 raw_input()
 os.system("apt-get update && apt-get install dex2jar apktool")
