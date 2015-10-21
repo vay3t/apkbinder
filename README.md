@@ -38,7 +38,7 @@ optional arguments:
 vay3t & 4c1d0_b1n4r10
 
 # Comments
-script based https://github.com/nodoraiz/AndroidAnalysis/blob/master/modify.py (nodoraiz)
+script based 
 
 # Bugs
 create multiple sessions, but only one has privileges
