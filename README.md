@@ -35,7 +35,7 @@ optional arguments:
 ```
 
 # Comments
-script based 
+script based by https://github.com/nodoraiz/AndroidAnalysis/blob/master/modify.py (nodoraiz)
 
 # Bugs
 create multiple sessions, but only one has privileges
