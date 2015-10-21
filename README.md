@@ -1,6 +1,9 @@
 # apkbinder
 Automatic backdooring apk with meterpreter (PoC)
 
+# How to
+apk place within "apkbinder" directory, named app-debug.apk
+
 # Dependencies
 ```
 kali 2.0:
@@ -18,7 +21,6 @@ permisos.xml - Permission of meterpreter
 ```
 
 # Command line
-
 ```
 usage: apkbinder.py [-h] -l LHOST [-p LPORT]
 
@@ -33,5 +35,10 @@ optional arguments:
 ```
 
 # Authors
-
 vay3t & 4c1d0_b1n4r10
+
+# Comments
+script based https://github.com/nodoraiz/AndroidAnalysis/blob/master/modify.py (nodoraiz)
+
+# Bugs
+create multiple sessions, but only one has privileges
