@@ -16,3 +16,18 @@ apkbinder.py - APK automatic backdooring script
 install.py - Install dependecies
 permisos.xml - Permission of meterpreter
 ```
+
+# Command line
+
+```
+usage: apkbinder.py [-h] -l LHOST [-p LPORT]
+
+Backdooring APK with meterpreter
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -l LHOST, --lhost LHOST
+                        LHOST que se usara
+  -p LPORT, --lport LPORT
+                        LPORT que se usara
+```
