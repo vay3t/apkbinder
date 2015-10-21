@@ -3,7 +3,7 @@ Automatic backdooring apk with meterpreter (PoC)
 
 # Dependencies
 ```
-kali 2.0
+kali 2.0:
 	python 2.7.x librerias: os re shutil zipfile tempfile argparse socket struct fcntl
 	metasploit
 	apktool
