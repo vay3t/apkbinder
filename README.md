@@ -31,3 +31,7 @@ optional arguments:
   -p LPORT, --lport LPORT
                         LPORT que se usara
 ```
+
+# Authors
+
+vay3t & 4c1d0_b1n4r10
