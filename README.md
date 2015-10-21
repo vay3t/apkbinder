@@ -27,9 +27,9 @@ Backdooring APK with meterpreter
 optional arguments:
   -h, --help            show this help message and exit
   -l LHOST, --lhost LHOST
-                        LHOST que se usara
+                        LHOST select local host
   -p LPORT, --lport LPORT
-                        LPORT que se usara
+                        LPORT select local port
 ```
 
 # Authors
