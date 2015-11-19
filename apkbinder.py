@@ -111,7 +111,7 @@ def integracion_meterpreter():
 		for linea_jasmin in lines_file_jasmin:
 			linea_jasmin_split=linea_jasmin.splitlines()
 			linea_jasmin_string=lista_a_string(linea_jasmin_split)
-			patron_oncreate=re.compile(" onCreate")
+			patron_oncreate=re.compile(" onCreate\(")
 			searched_oncreate=patron_oncreate.search(linea_jasmin_string)
 			inyect_linea_jasmin=linea_jasmin_string+"\n"
 			if searched_oncreate!=None:
