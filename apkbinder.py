@@ -161,7 +161,7 @@ def remove_tmp_meterpreter():
 	os.system("rm app-debug-manifest.apk")
 	os.system("rm classes.dex")
 	os.system("rm meterpreter-dex2jar.jar")
-	os.system("rm -r meterpreter-dex2jar-jar2jasmin") #carpeta
+	os.system("rm -r meterpreter-dex2jar-jar2jasmin")
 	os.system("rm meterpreter.apk")
 	print "[*] Temp files removed"
 
