@@ -6,7 +6,7 @@ apk place within "apkbinder" directory, named app-debug.apk
 
 # Dependencies
 ```
-kali 2.0:
+Kali-Rolling:
 	python 2.7.x libraries: os re shutil zipfile tempfile argparse
 	metasploit
 	apktool 2.0
@@ -16,7 +16,6 @@ kali 2.0:
 # Components
 ```
 apkbinder.py - APK automatic backdooring script
-install.py - Install dependecies
 permisos.xml - Permission of meterpreter
 ```
 
