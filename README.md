@@ -41,3 +41,7 @@ create multiple sessions, but only one has privileges
 
 # Authors
 vay3t & 4c1d0_b1n4r10
+
+# Copying
+###### Copyright 2015-2016 (C) Vay3t twitter.com/vay3t
+###### License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.
