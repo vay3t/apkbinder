@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 #PoC apkbinder
 #created by vay3t & 4c1d0_b1n4r10
+#Programa bajo licencia GPLv3 2015-2016 (c)
 #based by https://github.com/nodoraiz/AndroidAnalysis/blob/master/modify.py
 
 import os
