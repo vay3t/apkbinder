@@ -38,7 +38,7 @@ optional arguments:
 ```
 
 # Modules
-- mass-trojanizer -> module for massive trojanization, need list of ubications apk in list_apk.txt
+- mass-trojanizer -> module for massive trojanization, need list of ubications apk in list_apk.txt (you can use the command: "locate *.apk > list_apk.txt" to search apk files and saves paths in file.
 
 # Comments
 script based by https://github.com/nodoraiz/AndroidAnalysis/blob/master/modify.py (nodoraiz)
