@@ -17,6 +17,8 @@ Kali-Rolling:
 ```
 apkbinder.py - APK automatic backdooring script
 permisos.xml - Permission of meterpreter
+list_apk.txt - dependence of mass-trojanizer module
+
 ```
 
 # Command line
@@ -34,6 +36,9 @@ optional arguments:
   -m, --mas-trojanizer  Massive trojanization module, you need edit file:
                         list_apk.txt
 ```
+
+# Modules
+mass-trojanizer: module for massive trojanization, need list of ubications apk in list_aok.txt
 
 # Comments
 script based by https://github.com/nodoraiz/AndroidAnalysis/blob/master/modify.py (nodoraiz)
