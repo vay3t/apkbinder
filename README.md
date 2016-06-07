@@ -38,7 +38,7 @@ optional arguments:
 ```
 
 # Modules
-mass-trojanizer: module for massive trojanization, need list of ubications apk in list_aok.txt
+- mass-trojanizer: module for massive trojanization, need list of ubications apk in list_apk.txt
 
 # Comments
 script based by https://github.com/nodoraiz/AndroidAnalysis/blob/master/modify.py (nodoraiz)
