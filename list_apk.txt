@@ -1,5 +1,5 @@
 /root/evilapk/app1.apk
 /root/evilapk/wolfram.apk
-/root/poject/nsa.apk
+/root/project/nsa.apk
 /Android/apk/fbi.apk
 /root/aptoide/myapk.apk
