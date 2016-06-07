@@ -21,7 +21,7 @@ permisos.xml - Permission of meterpreter
 
 # Command line
 ```
-usage: apkbinder.py [-h] -l LHOST [-p LPORT]
+usage: apkbinder.py [-h] -l LHOST [-p LPORT] [-m]
 
 Backdooring APK with meterpreter
 
@@ -31,6 +31,8 @@ optional arguments:
                         LHOST select local host
   -p LPORT, --lport LPORT
                         LPORT select local port
+  -m, --mas-trojanizer  Massive trojanization module, you need edit file:
+                        list_apk.txt
 ```
 
 # Comments
