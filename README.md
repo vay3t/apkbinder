@@ -18,7 +18,6 @@ Kali-Rolling:
 apkbinder.py - APK automatic backdooring script
 permisos.xml - Permission of meterpreter
 list_apk.txt - dependence of mass-trojanizer module
-
 ```
 
 # Command line
